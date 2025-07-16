@@ -330,7 +330,7 @@ section {
 -----------------------------------------*/
 
 #beranda {
-    background: url("/assets/img/rak_buku.jpg") no-repeat center center;
+    background: url("../img/rak_buku.jpg") no-repeat center center;
     background-size: cover;
     vertical-align: middle;
     display: -webkit-box;

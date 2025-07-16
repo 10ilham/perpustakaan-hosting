@@ -28,7 +28,7 @@ Route::get('/', function () {
         }
     }
 
-    return view('layouts.index');
+    return view('welcome');
 });
 
 Route::get('formemail', [KirimEmailController::class, 'index']);
