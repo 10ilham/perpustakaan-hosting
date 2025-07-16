@@ -32,13 +32,13 @@ function loadAllCharts(period) {
     showChartLoading();
     updateTimeRangeDescriptions(period);
 
-    const lineChartPromise = fetch(`/laporan/chart-data?period=${period}`)
+    const lineChartPromise = fetch(`${apiBaseUrl}/laporan/chart-data?period=${period}`)
         .then(response => {
             console.log('Line chart response:', response);
             return response.json();
         });
 
-    const pieChartPromise = fetch(`/laporan/pie-chart-data?period=${period}`)
+    const pieChartPromise = fetch(`${apiBaseUrl}/laporan/pie-chart-data?period=${period}`)
         .then(response => {
             console.log('Pie chart response:', response);
             return response.json();

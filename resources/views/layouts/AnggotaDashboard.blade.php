@@ -114,8 +114,8 @@
                                         <td>{{ $item->buku->pengarang }}</td>
                                         <td>{{ $item->total_peminjaman }} kali</td>
                                         <td>
-                                            <a href="{{ route('buku.detail', ['id' => $item->buku->id, 'dashboard' => 'anggota']) }}" {{-- 'anggota' penamaan url ini bebas karena hanya sebagai referensi --}}
-                                                class="btn btn-sm btn-info">
+                                            <a href="{{ route('buku.detail', ['id' => $item->buku->id, 'dashboard' => 'anggota']) }}"
+                                                {{-- 'anggota' penamaan url ini bebas karena hanya sebagai referensi --}} class="btn btn-sm btn-info">
                                                 <i class="bx bx-info-circle"></i> Detail
                                             </a>
                                         </td>
@@ -170,7 +170,7 @@
 
         function loadChart(period) {
             // Mendapatkan data berdasarkan periode
-            fetch(`/anggota/chart-data?period=${period}`)
+            fetch(`{{ url('/anggota/chart-data') }}?period=${period}`)
                 .then(response => response.json())
                 .then(data => {
                     renderChart(data);
