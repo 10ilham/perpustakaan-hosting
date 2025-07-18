@@ -684,10 +684,12 @@ function initPeminjamanManual() {
             var tahunTerbit = selectedOption.attr('data-tahun-terbit');
             var status = selectedOption.attr('data-status');
 
-            // Update gambar buku - gunakan base URL dinamis
-            var baseUrl = window.location.origin;
+            var foto = selectedOption.attr('data-foto');
+
+            // Update gambar buku - gunakan base URL dinamis dari variabel global
             if (foto) {
-                $('#bukuImage').attr('src', baseUrl + '/assets/img/buku/' + foto)
+                // Gunakan variabel APP_URL yang sudah didefinisikan di Blade
+                $('#bukuImage').attr('src', APP_URL + '/assets/img/buku/' + foto)
                     .attr('alt', judul).show();
                 $('#defaultImage').hide();
             } else {
@@ -736,9 +738,8 @@ function initPeminjamanManual() {
             userSelect.prop('disabled', true).html('<option value="">Loading...</option>');
 
             // Gunakan base URL dinamis
-            var baseUrl = window.location.origin;
             $.ajax({
-                url: baseUrl + "/peminjaman/manual/get-anggota/" + level,
+                url: APP_URL + "/peminjaman/manual/get-anggota/" + level,
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {

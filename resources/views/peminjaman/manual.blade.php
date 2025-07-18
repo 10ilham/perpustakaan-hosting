@@ -252,6 +252,10 @@
 
 @section('scripts')
     <!-- File JavaScript peminjaman -->
+    <script>
+        // Menyediakan base URL aplikasi untuk digunakan oleh file peminjaman.js
+        const APP_URL = "{{ url('/') }}";
+    </script>
     <script src="{{ asset('assets/js/peminjaman/peminjaman.js') }}"></script>
 
     <script>
